@@ -13,6 +13,7 @@ export default defineComponent({
   name: 'HomeView',
   components: {
     HelloWorld,
+    
   },
 });
 </script>
