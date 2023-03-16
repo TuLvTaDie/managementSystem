@@ -85,7 +85,7 @@ export default defineComponent({
       }
     ]
     return {
-      menuList,
+      menuList
     }
   }
 })
