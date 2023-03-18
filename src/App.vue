@@ -16,6 +16,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { testApi } from '@/api/index';
 import leftTabs from '@/components/common/leftTabs.vue';
 export default defineComponent({
   components: {
@@ -26,69 +27,130 @@ export default defineComponent({
       {
         id: '1',
         path: '/CityShow',
-        name: 'HomeFilled',
-        label: '首页',
-        icon: 'HomeFilled',
+        name: 'Odometer',
+        label: 'Dashboard',
+        icon: 'Odometer',
         url: '/CityShow',
         router: '',
         children: [{
-            id: '1-2',
-            path: '/page2',
-            name: 'page2',
-            label: 'page2',
-            url: '/page2',
-            children: [
-              {
-                id: '1-1-1',
-                path: '/page1',
-                name: 'page1',
-                label: 'page1',
-                url: '/page1',
-              },
-            ],
-          },],
+          id: '1-1',
+          path: '/page2',
+          name: '分析页',
+          label: '分析页',
+          url: '/page2',
+        },{
+          id: '1-2',
+          path: '/page2',
+          name: '监控页',
+          label: '监控页',
+          url: '/page2',
+        },{
+          id: '1-3',
+          path: '/page2',
+          name: '工作台',
+          label: '工作台',
+          url: '/page2',
+        },],
       },
       {
         id: '2',
         path: '/UserFilled',
-        name: 'UserFilled',
-        label: '用户管理',
-        icon: 'UserFilled',
+        name: 'Edit',
+        label: '表单页',
+        icon: 'Edit',
         url: '/UserFilled',
-        children: [ 
-          {
-            id: '2-2',
-            path: '/page2',
-            name: 'page2',
-            label: 'page2',
-            url: '/page2',
-            children: [
-              {
-                id: '2-1-1',
-                path: '/page1',
-                name: 'page1',
-                label: 'page1',
-                url: '/page1',
-              },
-            ],
-          },
-        ],
+        children: [{
+          id: '2-1',
+          path: '/page2',
+          name: '基础表单',
+          label: '基础表单',
+          url: '/page2',
+          },{
+          id: '2-2',
+          path: '/page2',
+          name: '分步表单',
+          label: '分步表单',
+          url: '/page2',
+        },{
+          id: '2-3',
+          path: '/page2',
+          name: '高级表单',
+          label: '高级表单',
+          url: '/page2',
+        },],
       },
       {
         id: '3',
         path: '/Management',
-        name: 'Management',
-        label: '订单管理',
-        icon: 'Management',
+        name: 'Grid',
+        label: '列表页',
+        icon: 'Grid',
         url: '/Management',
-        children: [],
+        children: [{
+          id: '3-1',
+          path: '/page1',
+          name: '搜索列表',
+          label: '搜索列表',
+          url: '/page1',
+          children: [{
+            id: '3-1-1',
+            path: '/page1',
+            name: '搜索列表（文章）',
+            label: '搜索列表（文章）',
+            url: '/page1',
+          },{
+            id: '3-1-2',
+            path: '/page1',
+            name: '搜索列表（项目）',
+            label: '搜索列表（项目）',
+            url: '/page1',
+          },{
+            id: '3-1-3',
+            path: '/page1',
+            name: '搜索列表（应用）',
+            label: '搜索列表（应用）',
+            url: '/page1',
+          },],
+        },{
+          id: '3-2',
+          path: '/page1',
+          name: '查询列表',
+          label: '查询列表',
+          url: '/page1',
+          children: [],
+        },{
+          id: '3-3',
+          path: '/page1',
+          name: '标准列表',
+          label: '标准列表',
+          url: '/page1',
+          children: [],
+        },{
+          id: '3-4',
+          path: '/page1',
+          name: '卡片列表',
+          label: '卡片列表',
+          url: '/page1',
+          children: [],
+        }],
       }
     ]
     return {
       menuList
     }
+  },
+  created() {
+    // testApiFun()
   }
 })
+const testApiFun = async() => {
+  try {
+    let res = await testApi()
+    console.log(res);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
 </script>
 <style lang="scss">
 body {
