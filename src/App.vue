@@ -10,7 +10,13 @@
       <div class="leftTabs">
         <leftTabs :data="menuList"/>
       </div>
-      <div class="pageBody"></div>
+      <div class="pageBody">
+        <nav>
+          <router-link to="/">Home</router-link> |
+          <router-link to="/about">About</router-link>
+        </nav>
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
@@ -34,19 +40,19 @@ export default defineComponent({
         router: '',
         children: [{
           id: '1-1',
-          path: '/page2',
+          path: '/',
           name: '分析页',
           label: '分析页',
           url: '/page2',
         },{
           id: '1-2',
-          path: '/page2',
+          path: '/about',
           name: '监控页',
           label: '监控页',
           url: '/page2',
         },{
           id: '1-3',
-          path: '/page2',
+          path: '/about',
           name: '工作台',
           label: '工作台',
           url: '/page2',
@@ -61,19 +67,19 @@ export default defineComponent({
         url: '/UserFilled',
         children: [{
           id: '2-1',
-          path: '/page2',
+          path: '/about',
           name: '基础表单',
           label: '基础表单',
           url: '/page2',
           },{
           id: '2-2',
-          path: '/page2',
+          path: '/about',
           name: '分步表单',
           label: '分步表单',
           url: '/page2',
         },{
           id: '2-3',
-          path: '/page2',
+          path: '/about',
           name: '高级表单',
           label: '高级表单',
           url: '/page2',
@@ -94,40 +100,40 @@ export default defineComponent({
           url: '/page1',
           children: [{
             id: '3-1-1',
-            path: '/page1',
+            path: '/test',
             name: '搜索列表（文章）',
             label: '搜索列表（文章）',
             url: '/page1',
           },{
             id: '3-1-2',
-            path: '/page1',
+            path: '/about',
             name: '搜索列表（项目）',
             label: '搜索列表（项目）',
             url: '/page1',
           },{
             id: '3-1-3',
-            path: '/page1',
+            path: '/',
             name: '搜索列表（应用）',
             label: '搜索列表（应用）',
             url: '/page1',
           },],
         },{
           id: '3-2',
-          path: '/page1',
+          path: '/about',
           name: '查询列表',
           label: '查询列表',
           url: '/page1',
           children: [],
         },{
           id: '3-3',
-          path: '/page1',
+          path: '/about',
           name: '标准列表',
           label: '标准列表',
           url: '/page1',
           children: [],
         },{
           id: '3-4',
-          path: '/page1',
+          path: '/',
           name: '卡片列表',
           label: '卡片列表',
           url: '/page1',

@@ -20,6 +20,7 @@
     <!-- 没有下级 -->
     <el-menu-item v-else :index="item?.id">
       <component :is="item?.icon" class="menu-icon"></component>
+      <router-link class="routerClass" :to="item?.path">{{ item?.label }}</router-link>
       <template #title>{{ item?.label }}</template>
     </el-menu-item>
   </template>
@@ -40,7 +41,6 @@ import {
 export default defineComponent({
   name: 'MenuItem',
   props: ['menuList'],
-
   components: {
     Location,
     Setting,
@@ -51,7 +51,8 @@ export default defineComponent({
     Grid,
     UserFilled,
   },
-});
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -62,5 +63,15 @@ export default defineComponent({
 .menu-icon{
   width: 24px;
   height: 24px;
+}
+.routerClass {
+  width: 100%;
+  color: #000000;
+  text-decoration: none;
+  opacity: 0;
+  position: absolute;
+}
+.routerClass:hover {
+  color: rgba(64, 158, 255, 0.7);
 }
 </style>

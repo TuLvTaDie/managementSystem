@@ -7,7 +7,7 @@
         @open="handleOpen"
         @close="handleClose"
       >
-        <MenuItem :menuList="props.data" />
+        <MenuItem :menuList="props.data"/>
       </el-menu>
     </el-col>
   </el-row>
@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 import MenuItem from '@/components/common/MenuItem.vue'
 export default defineComponent({
   name: 'leftTabs',
@@ -33,18 +34,18 @@ export interface ColumnProps{
   router: any,
   children: any
 }
-
 const props = defineProps({
   data: {
     type: Array as PropType<ColumnProps[]>,
     default: () => []
   }
 });
+const router = useRouter()
 const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+  // console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+  // console.log(key, keyPath)
 }
 </script>
 
