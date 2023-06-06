@@ -52,7 +52,7 @@ export default defineComponent({
           url: '/page2',
         },{
           id: '1-3',
-          path: '/about',
+          path: '/test',
           name: '工作台',
           label: '工作台',
           url: '/page2',

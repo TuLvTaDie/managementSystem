@@ -1,6 +1,5 @@
 <template>
-  <div>this is testPage</div>
-  <el-button>Default</el-button>
+  <div>test</div>
 </template>
 
 <script lang="ts">
